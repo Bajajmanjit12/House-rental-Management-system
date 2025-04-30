@@ -29,4 +29,4 @@ A Java & MySQL-based application that helps manage house rentals efficiently. Th
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/house-rental-management-system.git
+   git clone https://github.com/Bajajmanjit12/house-rental-management-system.git
