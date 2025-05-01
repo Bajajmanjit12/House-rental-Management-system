@@ -1,34 +1,149 @@
-#title {
-    -fx-font-size: 26px;
-    -fx-text-fill: #2e8b57;
+/* Base styles */
+.root {
+    -fx-font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+/* Main container */
+.main-container {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-border-width: 1px;
+    -fx-border-color: rgba(255, 255, 255, 0.2);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 20, 0.3, 0, 5);
+    -fx-padding: 30px;
+}
+
+/* Auth container */
+.auth-container {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-width: 1px;
+    -fx-border-color: rgba(255, 255, 255, 0.25);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0.2, 0, 3);
+}
+
+/* Tab pane styling */
+.auth-tab-pane {
+    -fx-background-color: transparent;
+    -fx-tab-min-width: 120px;
+    -fx-tab-max-width: 120px;
+    -fx-padding: 0;
+}
+
+.auth-tab-pane .tab-header-background {
+    -fx-background-color: transparent;
+    -fx-effect: null;
+}
+
+.auth-tab-pane .tab {
+    -fx-background-color: transparent;
+    -fx-background-radius: 5 5 0 0;
+    -fx-border-width: 0;
+    -fx-padding: 8px 15px;
     -fx-font-weight: bold;
-    -fx-padding: 10 0 20 0;
-}
-
-#loginButton {
-    -fx-background-color: #2e8b57;
     -fx-text-fill: white;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.auth-tab-pane .tab:selected {
+    -fx-text-fill: white;
+    -fx-border-color: #00b894;
+    -fx-border-width: 0 0 2px 0;
+}
+
+.auth-tab-pane .tab-content-area {
+    -fx-background-color: transparent;
+    -fx-padding: 15px 0 0 0;
+}
+
+/* Form controls */
+.auth-input {
+    -fx-pref-width: 280px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+    -fx-border-color: rgba(255, 255, 255, 0.6);
+    -fx-border-width: 1px;
+    -fx-padding: 0 20px;
     -fx-font-size: 14px;
-    -fx-padding: 8 16;
-    -fx-background-radius: 5px;
+    -fx-text-fill: #333;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0.2, 0, 2);
+    -fx-prompt-text-fill: #999;
+}
+
+.auth-input:focused {
+    -fx-background-color: white;
+    -fx-border-color: #00b894;
+    -fx-border-width: 1.5px;
+    -fx-effect: dropshadow(gaussian, rgba(0,180,150,0.2), 10, 0.3, 0, 3);
+}
+
+.auth-combo {
+    -fx-pref-width: 280px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+    -fx-border-color: rgba(255, 255, 255, 0.6);
+    -fx-border-width: 1px;
+    -fx-padding: 0 20px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0.2, 0, 2);
+    -fx-prompt-text-fill: #999;
+}
+
+.auth-combo .arrow {
+    -fx-background-color: #00b894;
+}
+
+.auth-combo .list-cell {
+    -fx-background-color: white;
+    -fx-text-fill: #333;
+    -fx-padding: 8px 20px;
+}
+
+.auth-combo .list-view {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #eee;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0.3, 0, 5);
+}
+
+.auth-button {
+    -fx-pref-width: 280px;
+    -fx-pref-height: 45px;
+    -fx-background-radius: 22.5;
+    -fx-background-color: #00b894;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
     -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,180,150,0.4), 10, 0.3, 0, 3);
+    -fx-transition: all 0.3s ease;
 }
 
-#loginButton:hover {
-    -fx-background-color: #276644;
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .main-container {
+        -fx-max-width: 350px;
+        -fx-min-height: 550px;
+        -fx-padding: 20px;
+    }
+
+    .auth-input,
+    .auth-combo,
+    .auth-button {
+        -fx-pref-width: 240px;
+    }
 }
 
-.text-field, .password-field {
-    -fx-pref-width: 250px;
-    -fx-font-size: 14px;
-    -fx-padding: 6px;
-    -fx-background-radius: 4px;
-    -fx-border-color: #2e8b57;
-    -fx-border-radius: 4px;
-}
-
-#contentBox {
-    -fx-background-color: rgba(255, 255, 255, 0.8);
-    -fx-background-radius: 12px;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0, 0, 4);
+/* Tab text color override */
+.auth-tab-pane .tab-label {
+    -fx-text-fill: #00b894; /* or use #00a383 if you prefer the hover color */
+    -fx-font-weight: bold;
 }
